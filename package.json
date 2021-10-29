@@ -1,0 +1,24 @@
+{
+  "name": "hltv-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cauldronpumpkin/hltv-backend.git"
+  },
+  "author": "cauldronpumpkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cauldronpumpkin/hltv-backend/issues"
+  },
+  "homepage": "https://github.com/cauldronpumpkin/hltv-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hltv": "^3.3.3"
+  }
+}
