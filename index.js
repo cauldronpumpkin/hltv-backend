@@ -13,9 +13,22 @@ app.get('/live_matches', async (_, res) => {
      }))
 })
 
-app.get('/all_matches', async (_, res) => {
+app.get('/all_matches/:date?', async (req, res) => {
+
      const matches = await HLTV.getMatches()
-     res.send(matches)
+     
+     let d = new Date();
+     d.setDate(d.getDate() + 1)
+     d.setHours(0, 0, 0)
+     d.setMilliseconds(0)
+
+     if (req.params.date !== undefined) {
+          d = req.params.date;
+     }
+
+     res.send(matches.filter(obj => {
+          return obj['date'] < d
+     }))
 })
 
 app.get('/match_info/:match_id', async (req, res) => {
